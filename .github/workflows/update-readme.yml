@@ -1,9 +1,7 @@
 name: New Repository Workflow
 
 on:
-  repository_dispatch:
-    types:
-      - create
+  push
 
 jobs:
   update_readme:
