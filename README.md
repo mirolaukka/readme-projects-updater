@@ -77,7 +77,7 @@ if listed_projects == 5:
 Automate updating
 ------------
 1. Create a Batch Script
-    First create a batch script(`.bat`) that runs your python script. Open a text editor, paste the following code, and save it as `run_github_updater.bat` (or any name you prefer):
+    First create a batch script (`.bat`) that runs your python script. Open a text editor, paste the following code, and save it as `run_github_updater.bat` (or any name you prefer):
     ```batch
     @echo off
     cd path\to\readme-projects-updater
