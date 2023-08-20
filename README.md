@@ -1,4 +1,4 @@
-# GitHub Profile README Updater
+# Github README Project Updater
 
 This Python script allows you to dynamically update your GitHub profile README's "Recent Projects" list by fetching your latest public repositories from GitHub and inserting them into your README file.
 
