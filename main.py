@@ -3,6 +3,7 @@ import base64
 import re
 import logging
 from dotenv import dotenv_values
+from datetime import datetime
 
 # Load environment variables from a .env file
 config = dotenv_values('.env')
@@ -10,6 +11,11 @@ config = dotenv_values('.env')
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+current_time = datetime.now()
+
+time = current_time.strftime('%B %d, %Y, %H:%M')
 
 
 def get_recent_projects(username, access_token):
@@ -45,6 +51,9 @@ def update_readme_content(readme_content, projects_content):
     # Replace the [[PROJECTS]] placeholder with the recent projects content
     updated_content = re.sub(
         r'\[\[PROJECTS\]\]', projects_content, readme_content)
+
+    updated_content += f"\n\n ------\n_Last updated: {time} by [Readme Project Updater](https://github.com/mirolaukka/readme-projects-updater)_"
+
     return updated_content
 
 
