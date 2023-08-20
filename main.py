@@ -1,12 +1,11 @@
-import os
 import requests
 import base64
 import re
 import logging
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 
 # Load environment variables from a .env file
-load_dotenv()
+config = dotenv_values('.env')
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -78,8 +77,8 @@ def update_readme_in_repo(username, repo, access_token, content):
 
 
 if __name__ == "__main__":
-    github_username = os.getenv('GITHUB_USERNAME')
-    access_token = os.getenv('ACCESS_TOKEN')
+    github_username = config['GITHUB_USERNAME']
+    access_token = config['ACCESS_TOKEN']
 
     recent_projects = get_recent_projects(github_username, access_token)
     if recent_projects:
