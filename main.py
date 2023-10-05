@@ -37,7 +37,7 @@ def generate_recent_projects_section(projects):
     listed_projects = 0
 
     for project in projects:
-        if project["name"] != excluded_repo:
+        if project["name"] != excluded_repo and project['description'] is not None:
             content += f"- [{project['name']}]({project['html_url']}) - {project['description']}\n"
             listed_projects += 1
 
